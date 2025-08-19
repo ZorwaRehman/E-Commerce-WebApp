@@ -1,0 +1,65 @@
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+  <div class="card shadow p-4 border-0 rounded-3" style="max-width: 400px; width: 100%;">
+    
+    <!-- Logo -->
+    <div class="text-center mb-3">
+      <img src="assets/logo.png" alt="App Logo" style="width: 50px;">
+    </div>
+
+    <!-- Title -->
+    <h4 class="text-center fw-bold mb-3">Log in to E-commerce</h4>
+
+    <!-- Google Login -->
+    <button 
+      class="btn btn-light border d-flex align-items-center justify-content-center mb-3 w-100"
+      (click)="googleSignIn()">
+      <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google" style="width:20px; margin-right:8px;">
+      Use my <strong>Google</strong> account
+    </button>
+
+    <div class="text-center text-muted mb-3">Or, use my email address</div>
+
+    <!-- Email/Password Form -->
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+
+      <div class="mb-3">
+        <label for="email" class="form-label small fw-bold">Email or username</label>
+        <input 
+          type="email" 
+          class="form-control" 
+          id="email" 
+        [(ngModel)]="email" 
+          name="email" 
+          required 
+          placeholder="you@example.com">
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label small fw-bold">Password</label>
+        <input 
+          type="password" 
+          class="form-control" 
+          id="password" 
+          [(ngModel)]="password" 
+          name="password" 
+          required 
+          placeholder="••••••••">
+      </div>
+
+      <div class="d-grid">
+        <button 
+          type="submit" 
+          class="btn btn-primary fw-bold" 
+          [disabled]="!loginForm.valid">
+          Next
+        </button>
+      </div>
+    </form>
+
+    <!-- Forgot Password -->
+    <div class="text-center mt-3">
+      <a routerLink="/forgot-password" class="text-decoration-none">Forgot your password?</a>
+    </div>
+  </div>
+</div>
+

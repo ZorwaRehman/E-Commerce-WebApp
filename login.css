@@ -1,0 +1,10 @@
+.card {
+  background: #fff;
+}
+.btn-primary {
+  background-color: #007aff;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #005bb5;
+}
